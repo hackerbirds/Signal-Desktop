@@ -1,8 +1,8 @@
 {
-  "name": "signal-desktop",
-  "productName": "Signal",
-  "description": "Private messaging from your desktop",
-  "desktopName": "signal.desktop",
+  "name": "bird-signal-desktop",
+  "productName": "Bird Signal",
+  "description": "Private messaging from your desktop. Unofficial fork from the hackerbirds",
+  "desktopName": "bird.signal.desktop",
   "repository": "https://github.com/signalapp/Signal-Desktop.git",
   "version": "7.5.0-alpha.1",
   "license": "AGPL-3.0-only",
@@ -349,7 +349,7 @@
     "node": "20.9.0"
   },
   "build": {
-    "appId": "org.whispersystems.signal-desktop",
+    "appId": "org.bird.signal-desktop",
     "mac": {
       "artifactName": "${name}-mac-${arch}-${version}.${ext}",
       "category": "public.app-category.social-networking",
@@ -429,7 +429,9 @@
         "StartupWMClass": "Signal"
       },
       "target": [
-        "deb"
+        "deb",
+        "rpm",
+        "AppImage"
       ],
       "icon": "build/icons/png",
       "publish": []

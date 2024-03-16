@@ -23,7 +23,7 @@
 
   @include keyboard-mode {
     &:focus {
-      box-shadow: 0px 0px 0px 2px $color-ultramarine;
+      box-shadow: 0px 0px 0px 2px $color-gray-60;
     }
   }
 
@@ -56,7 +56,7 @@
   border-bottom-right-radius: 0px;
 }
 
-.module-quote--outgoing {
+.module-quote--incoming {
   background-color: $color-steel;
 
   .module-quote__primary {
@@ -71,44 +71,43 @@
   }
 }
 
-@each $color, $value in $conversation-colors {
-  .module-quote--incoming-#{$color} {
-    background-color: scale-color($value, $lightness: 60%);
+.module-quote--outgoing {
+  background-color: $color-white-alpha-40;
 
-    .module-quote__primary {
-      border-inline-start-color: $value;
-    }
-
-    @include dark-theme {
-      background-color: scale-color($value, $lightness: -40%);
-    }
+  .module-quote__primary {
+    border-inline-start-color: $color-white-alpha-60;
   }
 
-  .module-quote--outgoing-#{$color} {
-    background-color: scale-color($value, $lightness: 60%);
+  @include dark-theme {
+    background-color: $color-black-alpha-60;
+  }
+}
+
+.module-quote--incoming {
+  background-color: $color-white-alpha-40;
+
+  .module-quote__primary {
+    border-inline-start-color: $color-white;
+  }
+
+  @include dark-theme {
+    background-color: $color-black-alpha-50;
+    border-inline-start-color: $color-white;
+  }
+}
+
+.module-quote--compose {
+  background-color: $color-black-alpha-20;
+
+  .module-quote__primary {
+    border-inline-start-color: $color-black;
+  }
+
+  @include dark-theme {
+    background-color: $color-white-alpha-40;
 
     .module-quote__primary {
       border-inline-start-color: $color-white;
-    }
-
-    @include dark-theme {
-      background-color: scale-color($value, $lightness: -40%);
-      border-inline-start-color: $color-white;
-    }
-  }
-
-  .module-quote--compose-#{$color} {
-    background-color: scale-color($value, $lightness: 60%);
-
-    .module-quote__primary {
-      border-inline-start-color: $value;
-    }
-
-    @include dark-theme {
-      background-color: scale-color($value, $lightness: -40%);
-      .module-quote__primary {
-        border-inline-start-color: $color-white;
-      }
     }
   }
 }
@@ -117,42 +116,6 @@
 .module-quote--incoming-custom,
 .module-quote--outgoing-custom {
   background-attachment: fixed;
-}
-
-@each $color, $value in $conversation-colors-gradient {
-  .module-quote--compose-#{$color},
-  .module-quote--incoming-#{$color} {
-    .module-quote__primary,
-    &.module-quote__reference-warning {
-      border-inline-start-color: map-get($value, 'start');
-    }
-  }
-  .module-quote--compose-#{$color},
-  .module-quote--incoming-#{$color},
-  .module-quote--outgoing-#{$color} {
-    background-attachment: fixed;
-    @include light-theme {
-      background-image: linear-gradient(
-          map-get($value, 'deg'),
-          scale-color(map-get($value, 'start'), $lightness: 60%),
-          scale-color(map-get($value, 'end'), $lightness: 60%)
-        ),
-        linear-gradient(red, blue);
-    }
-    @include dark-theme {
-      background-image: linear-gradient(
-        map-get($value, 'deg'),
-        scale-color(map-get($value, 'start'), $lightness: -40%),
-        scale-color(map-get($value, 'end'), $lightness: -40%)
-      );
-    }
-  }
-  .module-quote--outgoing-#{$color} {
-    .module-quote__primary,
-    &.module-quote__reference-warning {
-      border-inline-start-color: $color-white;
-    }
-  }
 }
 
 .module-quote__primary {
@@ -177,6 +140,7 @@
   @include light-theme {
     color: $color-gray-90;
   }
+
   @include dark-theme {
     color: $color-gray-05;
   }
@@ -195,12 +159,15 @@
 
   @include light-theme {
     color: $color-gray-90;
+
     a {
       color: $color-gray-90;
     }
   }
+
   @include dark-theme {
     color: $color-gray-05;
+
     a {
       color: $color-gray-05;
     }
@@ -220,6 +187,7 @@
 .module-quote__primary__text--incoming {
   @include dark-theme {
     color: $color-gray-05;
+
     a {
       color: $color-gray-05;
     }
@@ -232,6 +200,7 @@
   @include light-theme {
     color: $color-gray-90;
   }
+
   @include dark-theme {
     color: $color-gray-05;
   }
@@ -260,7 +229,7 @@
 
   @include keyboard-mode {
     &:focus-within {
-      background-color: $color-ultramarine;
+      background-color: $color-gray-60;
     }
   }
 }
@@ -292,6 +261,7 @@
   @include light-theme {
     border: 1px solid $color-white;
   }
+
   @include dark-theme {
     border: 1px solid $color-white-alpha-80;
   }
@@ -328,24 +298,29 @@
 .module-quote__icon-container__icon--file {
   @include color-svg('../images/icons/v3/file/file.svg', $color-ultramarine);
 }
+
 .module-quote__icon-container__icon--image {
   @include color-svg(
     '../images/icons/v3/photo/photo-square.svg',
     $color-ultramarine
   );
 }
+
 .module-quote__icon-container__icon--microphone {
   @include color-svg('../images/icons/v3/mic/mic.svg', $color-ultramarine);
 }
+
 .module-quote__icon-container__icon--play {
   @include color-svg(
     '../images/icons/v3/play/play-fill.svg',
     $color-ultramarine
   );
 }
+
 .module-quote__icon-container__icon--movie {
   @include color-svg('../images/movie.svg', $color-ultramarine);
 }
+
 .module-quote__icon-container__icon--view-once {
   @include color-svg(
     '../images/icons/v3/view_once/view_once.svg',
@@ -358,6 +333,7 @@
   flex-direction: row;
   align-items: center;
 }
+
 .module-quote__generic-file__icon {
   background: url('../images/file-gradient.svg');
   background-size: 75%;
@@ -367,6 +343,7 @@
   margin-inline: -4px -6px;
   margin-bottom: 5px;
 }
+
 .module-quote__generic-file__text {
   @include font-body-2;
 
@@ -378,6 +355,7 @@
   @include light-theme {
     color: $color-gray-90;
   }
+
   @include dark-theme {
     color: $color-gray-05;
   }
@@ -413,6 +391,7 @@
       $color-gray-90
     );
   }
+
   @include dark-theme {
     @include color-svg(
       '../images/icons/v3/link/link-slash.svg',
@@ -428,6 +407,7 @@
       $color-gray-90
     );
   }
+
   @include dark-theme {
     @include color-svg(
       '../images/icons/v3/link/link-slash.svg',
@@ -444,6 +424,7 @@
   @include light-theme {
     color: $color-gray-90;
   }
+
   @include dark-theme {
     color: $color-gray-05;
   }
@@ -458,6 +439,7 @@
 .module-message {
   .module-message__author + .module-quote__container {
     margin-top: 3px;
+
     .module-quote {
       border-radius: 4px 4px 4px 4px;
     }
@@ -469,6 +451,7 @@
     border-top-left-radius: 4px;
   }
 }
+
 .module-message--outgoing.module-message--collapsed-above {
   .module-quote {
     border-top-right-radius: 4px;

@@ -46,7 +46,6 @@ export type PropsType = ContactNameData & {
 };
 
 export function ContactName({
-  contactNameColor,
   firstName,
   isSignalConversation,
   isMe,
@@ -66,10 +65,7 @@ export function ContactName({
   const WrappingElement = onClick ? 'button' : 'span';
   return (
     <WrappingElement
-      className={classNames(
-        getClassName(''),
-        contactNameColor ? getClassName(`--${contactNameColor}`) : null
-      )}
+      className={classNames(getClassName(''))}
       dir="auto"
       onClick={onClick}
     >

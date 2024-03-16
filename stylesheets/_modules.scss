@@ -456,20 +456,20 @@ $message-padding-horizontal: 12px;
   }
 }
 
-.module-message__container--outgoing {
+.module-message__container--incoming {
   @include light-theme {
-    background-color: $color-ultramarine;
+    background-color: $color-gray-75;
     color: $color-white;
   }
   @include dark-theme {
-    background-color: $color-ultramarine;
+    background-color: $color-gray-90;
     color: $color-gray-05;
   }
 }
 
 // In case the color gets messed up
-.module-message__container--incoming {
-  background-color: $color-gray-05;
+.module-message__container--outgoing {
+  background-color: $color-gray-45;
   color: $color-gray-90;
 
   @include dark-theme {
@@ -479,7 +479,7 @@ $message-padding-horizontal: 12px;
 }
 
 @each $color, $value in $conversation-colors {
-  .module-message__container--outgoing-#{$color} {
+  .module-message__container--incoming-#{$color} {
     background-color: $value;
 
     @include dark-theme {
@@ -488,18 +488,272 @@ $message-padding-horizontal: 12px;
   }
 }
 
-.module-message__container--outgoing-custom {
+.module-message__container--incoming-custom {
   background-attachment: fixed;
 }
 
 @each $color, $value in $conversation-colors-gradient {
-  .module-message__container--outgoing-#{$color} {
+  .module-message__container--incoming-#{$color} {
     background-attachment: fixed;
     background-image: linear-gradient(
       map-get($value, 'deg'),
       map-get($value, 'start'),
       map-get($value, 'end')
     );
+  }
+}
+
+.module-contact-name {
+  &--000 {
+    background-color: #ff7070;
+    @include dark-theme {
+      background-color: #d00b0b;
+    }
+  }
+
+  &--010 {
+    background-color: #ff6f52;
+    @include dark-theme {
+      background-color: #c13215;
+    }
+  }
+
+  &--020 {
+    background-color: #f57a3d;
+    @include dark-theme {
+      background-color: #b34209;
+    }
+  }
+
+  &--030 {
+    background-color: #d5920b;
+    @include dark-theme {
+      background-color: #9c5711;
+    }
+  }
+
+  &--040 {
+    background-color: #d68f00;
+    @include dark-theme {
+      background-color: #866118;
+    }
+  }
+
+  &--050 {
+    background-color: #b89b0a;
+    @include dark-theme {
+      background-color: #76681e;
+    }
+  }
+
+  &--060 {
+    background-color: #a4a437;
+    @include dark-theme {
+      background-color: #6b6b24;
+    }
+  }
+
+  &--070 {
+    background-color: #8faa09;
+    @include dark-theme {
+      background-color: #5e6e0c;
+    }
+  }
+
+  &--080 {
+    background-color: #74ad00;
+    @include dark-theme {
+      background-color: #4b7000;
+    }
+  }
+
+  &--090 {
+    background-color: #5eb309;
+    @include dark-theme {
+      background-color: #3d7406;
+    }
+  }
+
+  &--100 {
+    background-color: #42b309;
+    @include dark-theme {
+      background-color: #2d7906;
+    }
+  }
+
+  &--110 {
+    background-color: #43b42d;
+    @include dark-theme {
+      background-color: #2d761e;
+    }
+  }
+
+  &--120 {
+    background-color: #0ab80a;
+    @include dark-theme {
+      background-color: #067906;
+    }
+  }
+
+  &--130 {
+    background-color: #0ab827;
+    @include dark-theme {
+      background-color: #067919;
+    }
+  }
+
+  &--140 {
+    background-color: #0ab844;
+    @include dark-theme {
+      background-color: #06792d;
+    }
+  }
+
+  &--150 {
+    background-color: #00b85c;
+    @include dark-theme {
+      background-color: #007a3d;
+    }
+  }
+
+  &--160 {
+    background-color: #00b87a;
+    @include dark-theme {
+      background-color: #067953;
+    }
+  }
+
+  &--170 {
+    background-color: #09b397;
+    @include dark-theme {
+      background-color: #067462;
+    }
+  }
+
+  &--180 {
+    background-color: #00b2b2;
+    @include dark-theme {
+      background-color: #007575;
+    }
+  }
+
+  &--190 {
+    background-color: #00aed1;
+    @include dark-theme {
+      background-color: #077288;
+    }
+  }
+
+  &--200 {
+    background-color: #00a7fa;
+    @include dark-theme {
+      background-color: #036698;
+    }
+  }
+
+  &--210 {
+    background-color: #8ba1b6;
+    @include dark-theme {
+      background-color: #5b6976;
+    }
+  }
+
+  &--220 {
+    background-color: #7da1e8;
+    @include dark-theme {
+      background-color: #1b52c1;
+    }
+  }
+
+  &--230 {
+    background-color: #8599ff;
+    @include dark-theme {
+      background-color: #2e51ff;
+    }
+  }
+
+  &--240 {
+    background-color: #9494ff;
+    @include dark-theme {
+      background-color: #5151f6;
+    }
+  }
+
+  &--250 {
+    background-color: #a18ff9;
+    @include dark-theme {
+      background-color: #6447f5;
+    }
+  }
+
+  &--260 {
+    background-color: #af8af9;
+    @include dark-theme {
+      background-color: #7a3df5;
+    }
+  }
+
+  &--270 {
+    background-color: #bf80ff;
+    @include dark-theme {
+      background-color: #8f2af4;
+    }
+  }
+
+  &--280 {
+    background-color: #cf7cf8;
+    @include dark-theme {
+      background-color: #a20ced;
+    }
+  }
+
+  &--290 {
+    background-color: #e06ef7;
+    @include dark-theme {
+      background-color: #af0bd0;
+    }
+  }
+
+  &--300 {
+    background-color: #f65af6;
+    @include dark-theme {
+      background-color: #b814b8;
+    }
+  }
+
+  &--310 {
+    background-color: #f75fdd;
+    @include dark-theme {
+      background-color: #c20aa3;
+    }
+  }
+
+  &--320 {
+    background-color: #f76ec9;
+    @include dark-theme {
+      background-color: #c70a88;
+    }
+  }
+
+  &--330 {
+    background-color: #f76eb2;
+    @include dark-theme {
+      background-color: #cc0066;
+    }
+  }
+
+  &--340 {
+    background-color: #ff6b9c;
+    @include dark-theme {
+      background-color: #d00b4d;
+    }
+  }
+
+  &--350 {
+    background-color: #f77389;
+    @include dark-theme {
+      background-color: #d00b2c;
+    }
   }
 }
 
@@ -773,7 +1027,7 @@ $message-padding-horizontal: 12px;
 
   @include keyboard-mode {
     &:focus {
-      box-shadow: 0px 0px 0px 2px $color-ultramarine;
+      box-shadow: 0px 0px 0px 2px $color-gray-60;
     }
   }
 }
@@ -939,7 +1193,7 @@ $message-padding-horizontal: 12px;
 
   @include keyboard-mode {
     &:focus {
-      box-shadow: 0px 0px 0px 2px $color-ultramarine;
+      box-shadow: 0px 0px 0px 2px $color-gray-60;
     }
   }
 }

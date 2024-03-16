@@ -2645,6 +2645,7 @@ export class Message extends React.PureComponent<Props, State> {
       attachmentDroppedDueToSize,
       conversationColor,
       customColor,
+      contactNameColor,
       deletedForEveryone,
       direction,
       giftBadge,
@@ -2686,8 +2687,8 @@ export class Message extends React.PureComponent<Props, State> {
       isTapToView && isTapToViewExpired
         ? 'module-message__container--with-tap-to-view-expired'
         : null,
-      !isStickerLike && direction === 'outgoing'
-        ? `module-message__container--outgoing-${conversationColor}`
+      !isStickerLike && direction === 'incoming'
+        ? `module-contact-name--${contactNameColor}`
         : null,
       isTapToView && isAttachmentPending && !isTapToViewExpired
         ? 'module-message__container--with-tap-to-view-pending'
@@ -2705,6 +2706,7 @@ export class Message extends React.PureComponent<Props, State> {
     );
     const containerStyles = {
       width: shouldUseWidth ? width : undefined,
+      color: direction === 'incoming' ? '#eeeeee' : '#000000',
     };
     if (
       !isStickerLike &&
