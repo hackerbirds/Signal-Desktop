@@ -456,50 +456,13 @@ $message-padding-horizontal: 12px;
   }
 }
 
-.module-message__container--incoming {
-  @include light-theme {
-    background-color: $color-gray-75;
-    color: $color-white;
-  }
-  @include dark-theme {
-    background-color: $color-gray-90;
-    color: $color-gray-05;
-  }
-}
-
 // In case the color gets messed up
-.module-message__container--outgoing {
-  background-color: $color-gray-45;
-  color: $color-gray-90;
+.module-message__container--color-fallback {
+  background-color: $color-gray-60;
+  color: $color-gray-05;
 
   @include dark-theme {
     background-color: $color-gray-75;
-    color: $color-gray-05;
-  }
-}
-
-@each $color, $value in $conversation-colors {
-  .module-message__container--incoming-#{$color} {
-    background-color: $value;
-
-    @include dark-theme {
-      background-color: $value;
-    }
-  }
-}
-
-.module-message__container--incoming-custom {
-  background-attachment: fixed;
-}
-
-@each $color, $value in $conversation-colors-gradient {
-  .module-message__container--incoming-#{$color} {
-    background-attachment: fixed;
-    background-image: linear-gradient(
-      map-get($value, 'deg'),
-      map-get($value, 'start'),
-      map-get($value, 'end')
-    );
   }
 }
 
@@ -507,7 +470,7 @@ $message-padding-horizontal: 12px;
   &--000 {
     background-color: #ff7070;
     @include dark-theme {
-      background-color: #d00b0b;
+      background-color: #2a2626;
     }
   }
 
@@ -568,58 +531,58 @@ $message-padding-horizontal: 12px;
   }
 
   &--090 {
-    background-color: #5eb309;
+    background-color: #6aca09;
     @include dark-theme {
       background-color: #3d7406;
     }
   }
 
   &--100 {
-    background-color: #42b309;
+    background-color: #4ed30c;
     @include dark-theme {
       background-color: #2d7906;
     }
   }
 
   &--110 {
-    background-color: #43b42d;
+    background-color: #4cd431;
     @include dark-theme {
-      background-color: #2d761e;
+      background-color: #27571d;
     }
   }
 
   &--120 {
-    background-color: #0ab80a;
+    background-color: #0acc0a;
     @include dark-theme {
-      background-color: #067906;
+      background-color: #056a05;
     }
   }
 
   &--130 {
-    background-color: #0ab827;
+    background-color: #0bc92b;
     @include dark-theme {
-      background-color: #067919;
+      background-color: #056415;
     }
   }
 
   &--140 {
     background-color: #0ab844;
     @include dark-theme {
-      background-color: #06792d;
+      background-color: #014819;
     }
   }
 
   &--150 {
     background-color: #00b85c;
     @include dark-theme {
-      background-color: #007a3d;
+      background-color: #006030;
     }
   }
 
   &--160 {
     background-color: #00b87a;
     @include dark-theme {
-      background-color: #067953;
+      background-color: #035b3d;
     }
   }
 

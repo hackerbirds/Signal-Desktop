@@ -300,8 +300,10 @@
 }
 
 .module-quote__icon-container__icon--image {
-  @include color-svg('../images/icons/v3/photo/photo-square.svg',
-    $color-ultramarine );
+  @include color-svg(
+    '../images/icons/v3/photo/photo-square.svg',
+    $color-ultramarine
+  );
 }
 
 .module-quote__icon-container__icon--microphone {
@@ -309,8 +311,10 @@
 }
 
 .module-quote__icon-container__icon--play {
-  @include color-svg('../images/icons/v3/play/play-fill.svg',
-    $color-ultramarine );
+  @include color-svg(
+    '../images/icons/v3/play/play-fill.svg',
+    $color-ultramarine
+  );
 }
 
 .module-quote__icon-container__icon--movie {
@@ -318,8 +322,10 @@
 }
 
 .module-quote__icon-container__icon--view-once {
-  @include color-svg('../images/icons/v3/view_once/view_once.svg',
-    $color-ultramarine );
+  @include color-svg(
+    '../images/icons/v3/view_once/view_once.svg',
+    $color-ultramarine
+  );
 }
 
 .module-quote__generic-file {
@@ -388,25 +394,33 @@
   width: 16px;
 
   @include light-theme {
-    @include color-svg('../images/icons/v3/link/link-slash.svg',
-      $color-gray-90 );
+    @include color-svg(
+      '../images/icons/v3/link/link-slash.svg',
+      $color-gray-90
+    );
   }
 
   @include dark-theme {
-    @include color-svg('../images/icons/v3/link/link-slash.svg',
-      $color-gray-05 );
+    @include color-svg(
+      '../images/icons/v3/link/link-slash.svg',
+      $color-gray-05
+    );
   }
 }
 
 .module-quote__reference-warning__icon--incoming {
   @include light-theme {
-    @include color-svg('../images/icons/v3/link/link-slash.svg',
-      $color-gray-90 );
+    @include color-svg(
+      '../images/icons/v3/link/link-slash.svg',
+      $color-gray-90
+    );
   }
 
   @include dark-theme {
-    @include color-svg('../images/icons/v3/link/link-slash.svg',
-      $color-gray-05 );
+    @include color-svg(
+      '../images/icons/v3/link/link-slash.svg',
+      $color-gray-05
+    );
   }
 }
 
@@ -431,7 +445,7 @@
 }
 
 .module-message {
-  .module-message__author+.module-quote__container {
+  .module-message__author + .module-quote__container {
     margin-top: 3px;
 
     .module-quote {

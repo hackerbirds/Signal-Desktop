@@ -83,7 +83,6 @@ import type {
 } from '../../types/Colors';
 import { createRefMerger } from '../../util/refMerger';
 import { emojiToData, getEmojiCount, hasNonEmojiText } from '../emoji/lib';
-import { getCustomColorStyle } from '../../util/getCustomColorStyle';
 import type { ServiceIdString } from '../../types/ServiceId';
 import { DAY, HOUR, MINUTE, SECOND } from '../../util/durations';
 import { BadgeImageTheme } from '../../badges/BadgeImageTheme';
@@ -2642,9 +2641,7 @@ export class Message extends React.PureComponent<Props, State> {
   public renderContainer(): JSX.Element {
     const {
       attachments,
-      attachmentDroppedDueToSize,
       conversationColor,
-      customColor,
       contactNameColor,
       deletedForEveryone,
       direction,
@@ -2702,20 +2699,12 @@ export class Message extends React.PureComponent<Props, State> {
       this.hasReactions() ? 'module-message__container--with-reactions' : null,
       deletedForEveryone
         ? 'module-message__container--deleted-for-everyone'
-        : null
+        : null,
+      !isStickerLike ? 'module-message__container--color-fallback' : null
     );
     const containerStyles = {
       width: shouldUseWidth ? width : undefined,
-      color: direction === 'incoming' ? '#eeeeee' : '#000000',
     };
-    if (
-      !isStickerLike &&
-      !deletedForEveryone &&
-      !(attachmentDroppedDueToSize && !text) &&
-      direction === 'outgoing'
-    ) {
-      Object.assign(containerStyles, getCustomColorStyle(customColor));
-    }
 
     return (
       <div className="module-message__container-outer">
