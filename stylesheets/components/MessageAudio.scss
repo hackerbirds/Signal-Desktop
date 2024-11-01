@@ -9,6 +9,8 @@ $audio-attachment-button-margin-small: 4px;
   display: flex;
   flex-direction: column;
   margin-top: 2px;
+  max-width: 234px;
+
   /**
    * Players for audio or video content should always be left-to-right.
    * This overrides the default direction of the surrounding elements.
@@ -21,6 +23,17 @@ $audio-attachment-button-margin-small: 4px;
       margin-inline-end: $audio-attachment-button-margin-small;
     }
   }
+}
+
+.module-message__audio-attachment__file-name {
+  height: 16px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  display: flex;
+  align-items: center;
 }
 
 .module-message__audio-attachment__button-and-waveform {

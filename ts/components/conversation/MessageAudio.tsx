@@ -380,6 +380,7 @@ export function MessageAudio(props: Props): JSX.Element {
         withContentAbove ? `${CSS_BASE}--with-content-above` : null
       )}
     >
+      <b className={`${CSS_BASE}__file-name`}>{attachment.fileName}</b>
       <div className={`${CSS_BASE}__button-and-waveform`}>
         {button}
         {waveform}
